@@ -51,7 +51,8 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR OR BUDDY_MLIR_OUT_OF_TREE_
     # This could benefit users who want to specify a custom LLVM source directory,
     # but also not interfere with normal users who just want to use the buddy-mlir provided LLVM sources.
     if(NOT DEFINED LLVM_MAIN_SRC_DIR)
-      get_filename_component(LLVM_MAIN_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/llvm/llvm ABSOLUTE)
+      # get_filename_component(LLVM_MAIN_SRC_DIR ${LLVM_SRC} ABSOLUTE)
+      get_filename_component(LLVM_MAIN_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../llvm-project/llvm ABSOLUTE)
     endif()
     set(MLIR_MAIN_SRC_DIR ${LLVM_MAIN_SRC_DIR}/../mlir)
 
